@@ -1,12 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./app";
+function Greeting() {
+  return (
+    <div>
+      <h1>heloo world</h1>
+    </div>
+  )
+}
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  rootElement
-);
+// const Greeting = () => {
+//   return React.createElement(
+//     'div',
+//     {},
+//     React.createElement('h1', {}, 'hello world')
+//   )
+// }
+
+ReactDOM.render(Greeting(), document.getElementById('root'));
