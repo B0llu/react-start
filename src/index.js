@@ -21,7 +21,13 @@ function BookList() {
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
-      />
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit non
+          eligendi porro asperiores necessitatibus sunt, quaerat nam harum
+          consequatur animi.
+        </p>
+      </Book>
       <Book
         img={secondBook.img}
         title={secondBook.title}
@@ -31,14 +37,38 @@ function BookList() {
   );
 }
 
-const Book = (props) => {
+const Book = ({ img, title, author, children }) => {
   return (
     <article className="book">
-      <img src={props.img} alt="" />
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={img} alt="" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+      {children}
     </article>
   );
 };
 
 ReactDOM.render(BookList(), document.getElementById("root"));
+
+// Another way to use props
+// const Book = (props) => {
+//   const { img, title, author } = props;
+//   return (
+//     <article className="book">
+//       <img src={img} alt="" />
+//       <h1>{title}</h1>
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };
+
+// Another way to use props
+// const Book = (props) => {
+//   return (
+//     <article className="book">
+//       <img src={props.img} alt="" />
+//       <h1>{props.title}</h1>
+//       <h4>{props.author}</h4>
+//     </article>
+//   );
+// };
