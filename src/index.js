@@ -27,20 +27,21 @@ function BookList() {
   return (
     <section className="booklist">
       {books.map((book) => {
-        return (
-          <Book key={book.id} {...book}></Book>
-        )
+        return <Book key={book.id} {...book}></Book>;
       })}
     </section>
   );
 }
 
 const Book = ({ img, title, author }) => {
+  const clickHandler = () => {
+    alert("hello world");
+  };
   return (
-    <article className="book">
+    <article className="book" onMouseOver={() => console.log(title)}>
       <img src={img} alt="" />
-      <h1>{title}</h1>
-      <h4>{author}</h4>
+      <h1 onClick={() => console.log(title)}>{title}</h1>
+      <h4 onClick={clickHandler}>{author}</h4>
     </article>
   );
 };
