@@ -1,18 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
-function Greeting() {
-  return (
-    <div>
-      <Person />
-      <Message />
-    </div>
-  )
-}
-
-const Person = () => <h2>Dhruv Samant</h2>
-const Message = () => {
-  return <p>Hi whats up man?</p>
-}
-
-ReactDOM.render(Greeting(), document.getElementById('root'));
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
