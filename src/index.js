@@ -12,7 +12,7 @@ function Greeting() {
 
 const Person = () => <h2>Dhruv Samant</h2>
 const Message = () => {
-  return <p>Hi whats up man?</p>
+  return <p>Hi whats up man ?</p>
 }
 
 ReactDOM.render(Greeting(), document.getElementById('root'));
