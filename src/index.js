@@ -2,28 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-const books = [
-  {
-    id: 1,
-    img: "https://images-na.ssl-images-amazon.com/images/I/41cWqh0OeQL._SX321_BO1,204,203,200_.jpg",
-    title: "The Psychology of Money",
-    author: "Morgan Housel",
-  },
-  {
-    id: 2,
-    img: "https://m.media-amazon.com/images/P/B01N5AX61W.01._SCLZZZZZZZ_SX500_.jpg",
-    title: "Atomic Habits",
-    author: "James Clear",
-  },
-  {
-    id: 3,
-    img: "https://images-na.ssl-images-amazon.com/images/I/51T8OXMiB5L._SX356_BO1,204,203,200_.jpg",
-    title: "Ikigai: The Japanese secret to a long and happy life",
-    author: "Héctor García",
-  },
-];
+import {books} from './books'
+
+import Book from './book'
+// above book can be named anything like Specificbook or Nobook it will still work as it is a export default. DO NOT FORGET TO CHANGE THE NAME IN RETURN TOO
+
+import {greeting} from './testing/testing'
 
 function BookList() {
+  console.log(greeting)
   return (
     <section className="booklist">
       {books.map((book) => {
@@ -33,18 +20,7 @@ function BookList() {
   );
 }
 
-const Book = ({ img, title, author }) => {
-  const clickHandler = () => {
-    alert("hello world");
-  };
-  return (
-    <article className="book" onMouseOver={() => console.log(title)}>
-      <img src={img} alt="" />
-      <h1 onClick={() => console.log(title)}>{title}</h1>
-      <h4 onClick={clickHandler}>{author}</h4>
-    </article>
-  );
-};
+
 
 ReactDOM.render(BookList(), document.getElementById("root"));
 
